@@ -1,0 +1,155 @@
+<!-- <this is root> -->
+
+<h1 class="mycolor">hema works!</h1><br>
+<h1 [class.mycolor]=myClassCss>hema works! class ts is true so class css turn on</h1><br>
+<h1 [class.mycolor]=myClassCss2>hema works! class ts is false so class css turn off</h1><br>
+<h1 [ngClass]=totalClass>hema works!</h1><br>
+<h3>{{'hema works with uppercase!'| uppercase}} </h3><br>
+<h3>{{'Hema Works with lowercase!'| lowercase}} </h3><br>
+<h1>this is birthday with | :{{ birthday | date}} </h1><br>
+<h1>this is birthday without | :{{ birthday}} </h1><br>
+<h1>this is birthday with | and with more | :{{ birthday | date | uppercase}} </h1><br>
+<h1>this is birthday with | and type date = "dd-MM-yyyy" :{{ birthday | date:"dd-MM-yyyy"}} </h1><br>
+<h1> My Salary : {{ mySalary | currency:"GBP"}} </h1><br>
+<h1> My Rate : {{ myRate | percent}} </h1><br>
+
+<span *ngIf="sultanName" >{{suName}}</span><br>
+<span *ngIf="!sultanName" >{{suName}}</span><br>
+<span *ngIf="!sultanName ; else anotherName">{{suName}}</span><br>
+<span><ng-template #anotherName>this another name for if property not found</ng-template>
+<span>{{!sultanName ? suName :'this another name for if property not found in way 2'}}</span><br>
+</span>
+<br>
+<ul><li *ngFor="let person of people" >{{person}}</li></ul>
+<ul><li *ngFor="let myJop of jop ;let i = index" >{{i}}-{{myJop}}</li></ul>
+<ul><li *ngFor="let myJop of jop ;let i = index" >{{i+1}}-{{myJop}}</li></ul>
+<ul><li *ngFor="let myplang of plang" >{{myplang}}</li></ul>
+<ul><li *ngFor="let myplang of plang" >{{myplang.languageName}}</li></ul>
+<ul><li *ngFor="let myplang of plang" >{{myplang.shortcut}}</li></ul>
+<ul><li *ngFor="let myplang of plang" >{{myplang.city}}</li></ul>
+
+<ul><li *ngFor="let myplang of plang" >{{myplang.languageName}}-{{myplang.shortcut}}-{{myplang.city}}- <br> <img [src]="myplang.myNewImage" alt=""></li></ul>
+
+<br>
+<br>
+<br>
+<br>
+<div [ngSwitch]="true">
+<p *ngSwitchCase="true">
+muhamed true
+<!-- this show if proparty true-->
+</p>
+<p *ngSwitchCase="false">
+ahmed false
+<!-- this show if proparty false -->
+</p>
+<p *ngSwitchDefault>
+nothing 
+<!-- this show if proparty not true and not false -->
+</p>
+</div><br>
+<br>
+<br>
+<br>
+<br>
+<div [ngSwitch]="false">
+<p *ngSwitchCase="true">
+muhamed true
+<!-- this show if proparty true-->
+</p>
+<p *ngSwitchCase="false">
+ahmed false
+<!-- this show if proparty false -->
+</p>
+<p *ngSwitchDefault>
+nothing 
+<!-- this show if proparty not true and not false -->
+</p>
+</div><br>
+<br>
+<br>
+<br>
+<br>
+<div [ngSwitch]="">
+<p *ngSwitchCase="true">
+muhamed true
+<!-- this show if proparty true-->
+</p>
+<p *ngSwitchCase="false">
+ahmed false
+<!-- this show if proparty false -->
+</p>
+<p *ngSwitchDefault>
+nothing 
+<!-- this show if proparty not true and not false -->
+</p>
+</div><br>
+<br>
+<br>
+<br>
+<br>
+<div [ngSwitch]="myNumber">
+<p *ngSwitchCase="50">
+muhamed 50
+<!-- this show if proparty true-->
+</p>
+<p *ngSwitchCase="100">
+ahmed 100
+<!-- this show if proparty false -->
+</p>
+<p *ngSwitchCase="200">
+    ahmed 200
+    
+    </p>
+    <p *ngSwitchCase="300">
+        ahmed 300
+        
+        </p>
+        <p *ngSwitchCase="400">
+            ahmed 400
+            
+            </p>
+<p *ngSwitchDefault>
+nothing 
+<!-- this show if proparty not true and not false -->
+</p>
+</div><br>
+
+
+<div><img src="{{myImage}}" alt=""></div>
+<div><img [src]="myImage" alt=""></div>
+<div><img bind-src="myImage" alt=""></div>
+<br>
+<div><img [textContent]="myImage" alt=""></div>
+
+
+
+
+<!-- this is follow my cource -->
+
+
+<!-- <h1>hema works!
+<br>
+{{name}}
+<br>
+{{lname}}
+<br>
+{{age}}
+<br>
+<br>
+<br>
+<br>
+{{employee.name}}
+<br>
+{{employee.lname}}
+<br>
+{{employee.age}}
+<br>
+
+{{3+5}}
+<br>
+{{age1}}
+</h1> -->
+
+
+<!-- <h2>{{Person}}</h2> -->

@@ -1,0 +1,75 @@
+<h1 *ngIf="isActive" >my-component works! {{title}}</h1>
+
+<div class="container p-4">
+<ul>
+    <li *ngFor="let item of users" >
+        {{item}}
+    </li>
+</ul>
+<span> <h1 [style.background]="isActive2 ? 'yellow':'red'">test binding</h1></span>
+<button (click)="methodName()" class="p-2 text-light bg-danger shadow rounded"> Save</button>
+
+<!-- (click)="divClicked()" -->
+<div  class="p-5 bg-dark mt-2">
+  <button (click)="btnClicked($event)" class="p-2 mt-3 text-light bg-danger shadow rounded">
+    Save 2
+  </button>
+  <br>
+
+  <button (click)="btnClicked2($event)" class="p-2 mt-3 text-light bg-danger shadow rounded">
+      Save 3
+  </button>
+  <br>
+  <br>
+  <br>
+  <!-- in key up will start function -->
+  <input (keyup)="onKeyUp($event)" type="text"><br>
+  <br>
+  <!-- in key up b will start function -->
+  <input (keyup.b)="onKeyUp($event)" type="text"><br>
+  <br>
+  <!-- in key up enter will start function with angular -->
+  <input (keyup.enter)="onKeyUp($event)" type="text"><br>
+  <br>
+  <!-- in key up enter will start function with js-->
+  <input (keyup)="onKeyUp2($event)" type="text">
+  <!-- this explen value from input to h2 with first way all change will be explen  -->
+  <br>
+  <br>
+  <h2 class='text-light'>name value is : {{nameValue}}</h2>
+  <input (keyup.enter)="onKeyUp3($event)" type="text">
+  <!--  this explen value from input to h2 with seconed way all change will be explen -->
+  <br>
+  <br>
+  <h2 class='text-light'>name value is : {{nameValue2}}</h2>
+  <input #firstName (keyup.enter)="onKeyUp4(firstName.value)" type="text">
+<!-- this explen object -->
+<br>
+<br>
+<h2 class='text-light'>name value is : {{nameValue3}}</h2>
+<input #lastName (keyup.enter)="onKeyUp5(lastName)" [placeholder]="name" type="text">
+<!-- this explen value from input to h2 with hirdall change will be explen -->
+<br>
+<br>
+<h2 class='text-light'>name value is : {{nameValue4}}</h2>
+<input [value]="nameValue4" (keyup.enter)="onKeyUp6()" type="text">
+
+<!-- this is the same way above but this is explen change -->
+<br>
+<br>
+
+
+
+<!-- <input #fName [value]="nameValue5" (keyup.enter)="fName=$event.target.value;onKeyUp7(fName.value)" type="text"> -->
+<!-- this way -->
+<!-- <h2 class='text-light'>name value is : {{nameValue5}}</h2>
+<input #fName [value]="nameValue5" (keyup.enter)="onKeyUp7(fName.value)" type="text"> -->
+<!-- or this way -->
+<h2 class='text-light'>name value is : {{nameVal}} </h2>
+<input [value]="nameVal" (keyup.enter)="fName=$event.target.value;onKeyUp7(fName)" type="text">
+ <!-- banana inbox -->
+ <h2 class='text-light'>name value is : {{hName}} </h2>
+<input [(ngModel)]="hName" (keyup.enter)="onKeyUp8(hName)" type="text">
+
+</div>
+`

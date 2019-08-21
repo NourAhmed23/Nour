@@ -1,0 +1,172 @@
+<h1>cpanel works!</h1>
+<div class="panal panal-defualt">
+  <div class=" w-5 p-5 bg-dark ml-2 mr-2 text-white panal-heading"><ng-content #heading></ng-content>
+  </div>
+  <div class="w-5 p-5 bg-danger mt-1 ml-2 mr-2 text-white panal-body"><ng-content select=".body"></ng-content>
+  </div>
+</div>
+  <ul>
+    <li *ngFor="let course of courses ; let i=index" >{{i+1}}-{{course}}</li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item}}</li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item.name}}</li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item.age}}</li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item.city}}</li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item.school}}</li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item.school.first}}-{{item.school.second}}-{{item.school.third}}</li>
+  </ul>
+  <ul>
+      <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item.name}}-{{item.age}}-{{item.city}}</li>
+  </ul>
+  <ul *ngFor="let item of items; let i=index" >
+    <li> <h1>{{i+1}})person Information</h1></li>
+    <li>{{item.name}}</li>
+    <li>{{item.age}}</li>
+    <li>{{item.city}}</li>
+    <li>{{item.school.first}}</li>
+    <li>{{item.school.second}}</li>
+    <li>{{item.school.third}}</li>
+    //
+    <ul>
+        <li>{{item.name}}</li>
+        <li>{{item.age}}</li>
+        <li>{{item.city}}</li>
+        <li>{{item.school.first}}</li>
+        <li>{{item.school.second}}</li>
+        <li>{{item.school.third}}</li>
+        <li *ngFor="let item of items ; let i=index" >{{i+1}}-{{item.school.first}}-{{item.school.second}}-{{item.school.third}}</li>
+  </ul>
+  </ul>
+  <!-- this code -->
+  <!-- <p>This Is Add And Remove Element</p>
+  <div class="w-5 p-5 bg-danger mt-1 ml-2 mr-2 text-white panal-body">
+      <p>This Is Add And Remove Element</p>
+      <button class="btn btn-primary"(click)="onAdd()">Add</button>
+        <ul>
+
+            <li *ngFor="let course of courses" ><button class="btn btn-primary mt-2" (click)="onRemove(course)">Rmove</button> {{course}}</li>
+
+        </ul>
+
+</div>
+<div class="w-5 p-5 bg-danger mt-1 ml-2 mr-2 text-white panal-body">
+    <p>This Is Add And Remove Element By Track By</p>
+    <button class="btn btn-primary"(click)="onAdd2()">Add</button>
+      <ul>
+
+          <li *ngFor="let course2 of courses2;trackBy : trackByCourse()" ><button class="btn btn-primary mt-2" (click)="onRemove2(course2)">Rmove</button> {{course2.id}}={{course2.CourseName}}</li>
+
+      </ul>
+
+</div>
+<div class="alert-danger p-5 m-2" *ngIf="courses2.length === 0" >
+  No courses yet
+</div> -->
+<!-- the same this but by ng templet -->
+<p>This Is Add And Remove Element</p>
+  <div class="w-5 p-5 bg-danger mt-1 ml-2 mr-2 text-white panal-body">
+      <p>This Is Add And Remove Element</p>
+      <button class="btn btn-primary"(click)="onAdd()">Add</button>
+        <ul>
+
+            <li *ngFor="let course of courses" ><button class="btn btn-primary mt-2" (click)="onRemove(course)">Rmove</button> {{course}}</li>
+
+        </ul>
+
+</div>
+<div *ngIf="courses2.length > 0 ; then courses2List else noCOurses2" ></div>
+<ng-template #courses2List>
+    <div class="w-5 p-5 bg-danger mt-1 ml-2 mr-2 text-white panal-body">
+        <p>This Is Add And Remove Element By Track By Anf ng-templetg</p>
+        <button class="btn btn-primary"(click)="onAdd2()">Add</button>
+          <ul>
+
+              <li *ngFor="let course2 of courses2;trackBy : trackByCourse()" ><button class="btn btn-primary mt-2" (click)="onRemove2(course2)">Rmove</button> {{course2.id}}={{course2.CourseName}}</li>
+
+          </ul>
+
+    </div>
+</ng-template>
+
+
+<ng-template #noCOurses2  >
+  <div class="alert-danger p-5 m-2" *ngIf="courses2.length === 0" >
+    No courses yet
+  </div>
+</ng-template>
+
+
+<!-- This is hidden proartiy -->
+
+<div [hidden]="courses2.length ===0">
+    <div class="w-5 p-5 bg-danger mt-1 ml-2 mr-2 text-white panal-body">
+        <p>This Is Add And Remove Element By Track By And Hidden Proparty</p>
+        <button class="btn btn-primary"(click)="onAdd2()">Add</button>
+          <ul>
+
+              <li *ngFor="let course2 of courses2;trackBy : trackByCourse()" ><button class="btn btn-primary mt-2" (click)="onRemove2(course2)">Rmove</button> {{course2.id}}={{course2.CourseName}}</li>
+
+          </ul>
+
+    </div>
+</div>
+
+
+<div class="alert-danger p-5 m-2" [hidden]="courses2.length > 0">
+
+    No courses yet
+</div>
+<!-- ng switch case -->
+<div class="w-5 p-5 bg-danger mt-1 ml-2 mr-2 text-white panal-body">
+
+<ul class="nav nav-pills ">
+  <li class="nav-item m-2 p-2 "[class.active]="defualtView === 'courses5'"><a class="nav-link btn btn-outline-primary p-2" (click)="setView('courses5')"> Cources</a></li>
+  <li class="nav-item m-2 p-2" [class.active]="defualtView === 'courtifications'"><a class="nav-link btn btn-outline-primary p-2" (click)="setView('courtifications')"> Courtifications</a></li>
+  <li class="nav-item m-2 p-2" [class.active]="defualtView === 'courtifications2'"><a class="nav-link btn btn-outline-primary p-2" (click)="setView('courtifications2')"> Courtifications2</a></li>
+
+</ul>
+<div class=" w-5 p-5 bg-dark ml-2 mr-2 text-white panal-heading" [ngSwitch]="defualtView">
+    <div *ngSwitchCase="'courses5'" >List Of Courses</div>
+    <div *ngSwitchCase="'courtifications'" >List Of Courtifications</div>
+    <div *ngSwitchCase="'courtifications2'" >List Of Courtifications2</div>
+  </div>
+
+</div>
+<!-- ng style -->
+<div
+[style.background]="isColor?'red':'yellow'"
+[style.color]="isColor?'white':'red'"
+[style.width]="isColor?'100%':'90%'"
+[style.height]="isColor?'5rem':'4rem'"
+> welcome to my site</div>
+
+
+
+<!-- <div
+[ngstyle]="{
+  'background':isColor?'red':'yellow',
+  'color':isColor?'white':'red',
+  'width':isColor?'100%':'100%',
+  'height':isColor?'5rem':'4rem',
+}"
+> welcome to my site2</div> -->
+
+<!-- end ng style --><label>To Upper Case in Format File : </label>
+<input type="text" appInputFormat><br>
+<label>To Lower Case in Html File : </label>
+<input type="text" appInputFormat [format]="'toLowerCase'"><br>
+<label>To Upper Case in Html File : </label>
+<input type="text" appInputFormat [format]="'toUpperCase'">
+
+

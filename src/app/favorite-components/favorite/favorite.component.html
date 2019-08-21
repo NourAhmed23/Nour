@@ -1,0 +1,36 @@
+
+<!--
+<h1>favorite works!</h1>
+  <span class="glyphicon"
+[class.glyphicon glyphicon-heart]="isFavorite"
+[class.glyphicon glyphicon-heart-empty]="!isFavorite"
+(click)="onFavoriteClick()"
+>
+
+</span>
+
+ng class
+
+<h1>favorite works!</h1>
+  <span class="glyphicon"
+[ngClass]="
+{
+  'glyphicon glyphicon-heart' : isFavorite,
+  'glyphicon glyphicon-heart-empty' : !isFavorite
+}
+"
+(click)="onFavoriteClick()"
+>
+
+</span>
+<div>
+  to use any number character to cut look to ts
+  {{title | summary :5}}<br/>
+  {{title | summary :15}}<br/>
+
+
+</div>
+-->
+
+
+<span *ngIf="isFavorite()" >wellcom : {{title | summary :10}}</span>

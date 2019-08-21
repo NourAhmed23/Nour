@@ -1,0 +1,64 @@
+<!-- <input type="text" #title (keyup.enter)="creatPost(title.value)" class="form-control"> -->
+
+<!-- Or -->
+
+
+<input type="text" #title (keyup.enter)="creatPost(title)" class="form-control">
+
+<div class="m-5 p-5" *ngFor="let post of posts">
+<ul class="list-group">
+  <li class="list-group-item text-center h1">
+    <button class="btn btn-outline-info mr-2" (click)="updatePost(post.title)"> Update </button>
+
+    <button class="btn btn-outline-danger mr-2" (click)="deletePost(post)"> Delete </button>
+  </li>
+  <li   class="list-group-item text-center h1">
+    {{post.id}}
+  </li>
+  <li   class="list-group-item text-center h1">
+    {{post.title}}
+  </li>
+  <li   class="list-group-item ">
+    {{post.body}}
+  </li>
+</ul>
+</div>
+<!-- <form [formGroup]="form" #f="ngForm" (ngSubmit)="submit()" class="m-5 p-5">
+  <div class="form-group">
+    <div class="alert alert-danger" *ngIf="form.errors" >
+      Email Or Password Is Incorect
+    </div>
+    <label for="exampleInputPassword1">Email</label>
+
+    <input type="email" formControlName="email" class="form-control" placeholder="Enter Your Email">
+    <div class="alert alert-danger" *ngIf="email.pending" >
+      <img src="https://digitalsynopsis.com/wp-content/uploads/2016/06/loading-animations-preloader-gifs-ui-ux-effects-24.gif" width="100" height="50" alt="">
+    </div>
+    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+            Pleas Enter Your Email
+
+       <div *ngIf="email.errors.shouldBeUnique" >
+         Email Allready Exist
+       </div>
+     </div>
+    </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+     <input type="text" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+     <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+       <div *ngIf="password.errors.noSpaceAllowed" >
+         No Space Required
+       </div>
+
+     </div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+      <input type="text" formControlName="age"/>
+      <p *ngIf="age.errors?.range">error message</p>
+      </div>
+  </form> -->

@@ -1,0 +1,52 @@
+<h1>my-forms works!</h1>
+
+
+<div class="container p-5">
+
+        <form novalidate #fo="ngForm" action="/action_page.php" (ngSubmit)="mySubmit(fo)">
+            <div class="form-group">
+              <label for="name">First Name:</label>
+              <input type="text" [(ngModel)]="name" #myName="ngModel" required minlength="4" name="name" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name:</label>
+              <input type="text" [(ngModel)]="lname" #myLname="ngModel" required minlength="4" name="lname" class="form-control" id="lname">
+            </div>
+            <div class="form-group">
+                    <label for="age"> Age:</label>
+                    <input type="number" [(ngModel)]="age" #myAge="ngModel" required minlength="2" name="age" class="form-control"  id="age">
+                  </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          
+          <div *ngIf="myName.errors?.required && myName.touched" class="alert alert-danger" >Your First Name Is Required</div>
+          <div *ngIf="myName.errors?.minlength && myName.touched" class="alert alert-danger" >Min Required 4 Chars </div>
+
+          <div *ngIf="myLname.errors?.required && myLname.touched" class="alert alert-danger" >Your Last Name Is Required</div>
+          <div *ngIf="myLname.errors?.minlength && myLname.touched" class="alert alert-danger" >Min Required 4 Chars </div>
+
+          <div *ngIf="myAge.errors?.required && myAge.touched" class="alert alert-danger" >Your Age Is Required</div>
+          <div *ngIf="myAge.errors?.minlength && myAge.touched" class="alert alert-danger" >Min Required 2 Numbers </div>
+          </form>
+        
+
+</div>
+<!-- <div class="container">
+<div *ngFor="let item of myShop" >
+        <h3>{{item}}</h3>
+</div>
+    
+</div> -->
+<br><br>
+
+<div class=container>
+    <h3>{{name}}</h3>
+    <h3>{{lname}}</h3>
+    <h3>{{age}}</h3>
+    <h3>{{verfiyForm}}</h3>
+    <h3 *ngFor="let item of verfiyForm" >{{item}}</h3>
+</div>

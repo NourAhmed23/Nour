@@ -1,0 +1,14 @@
+.mycolor{
+    color: red;
+    font-weight: 40px;
+    font-style: italic;
+    text-transform: capitalize
+}
+.mycolor2{
+    font-style: italic;
+    text-transform: capitalize
+}
+.mycolor3{
+    color: blue;
+    font-weight: 40px;
+}
